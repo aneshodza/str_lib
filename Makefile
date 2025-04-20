@@ -4,9 +4,9 @@ CC = gcc
 CFLAGS = -Wall -Wextra -g
 
 # Executable name
-TARGET = executable
+TARGET = out/executable
 
-SRCS = main.c str_lib.c
+SRCS := $(wildcard src/*.c)
 OBJS = $(SRCS:.c=.o)
 
 all: $(TARGET)

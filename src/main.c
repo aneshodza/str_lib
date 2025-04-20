@@ -1,4 +1,4 @@
-#include "str_lib.h"
+#include "../include/str_lib.h"
 #include <stdio.h>
 
 int main() {
