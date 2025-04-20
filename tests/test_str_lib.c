@@ -5,7 +5,7 @@ void test_str_len_basic(void) {
   CU_ASSERT_EQUAL(str_len("hello"), 5);
   CU_ASSERT_EQUAL(str_len(""), 0);
   CU_ASSERT_EQUAL(str_len(" "), 1);
-  CU_ASSERT_EQUAL(str_len("1234567890"), 11);
+  CU_ASSERT_EQUAL(str_len("1234567890"), 10);
 }
 
 int main() {
