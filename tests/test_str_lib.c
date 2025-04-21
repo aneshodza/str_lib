@@ -21,6 +21,16 @@ void test_str_concat(void) {
   CU_ASSERT_STRING_EQUAL(str_concat(" ", "_"), " _");
 }
 
+void test_str_trim(void) {
+  char str1[] = " test ";
+  str_trim(str1);
+  CU_ASSERT_STRING_EQUAL(str1, "test");
+
+  char str2[] = "    hello, world!";
+  str_trim(str2);
+  CU_ASSERT_STRING_EQUAL(str2, "hello, world!");
+}
+
 int main() {
   // Sets up everything
   CU_initialize_registry();

@@ -44,3 +44,27 @@ char *str_concat(const char *str1, const char *str2) {
 
   return str_result;
 }
+
+void str_trim(char *str) {
+  char *copy = str;
+  int len = str_len(str);
+
+  int start = 0;
+  while (*copy == ' ') {
+    start++;
+    copy++;
+  }
+
+  copy = str + len;
+  int end = 0;
+  while (*copy == ' ') {
+    end++;
+    copy--;
+  }
+
+  int i;
+  for(i = 0; i < len - start - end; i++) {
+    str[i] = str[i + end];
+  }
+  str[i+1] = '\0';
+}
