@@ -13,3 +13,16 @@ int str_len(const char *str) {
   } 
   return len;
 }
+
+int str_count_char(const char *str, char c) {
+  int counter = 0;
+
+  while (*str) {
+    if (*str == c) {
+      counter++;
+    }
+    str++;
+  }
+
+  return counter;
+}
