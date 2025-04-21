@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "../include/str_lib.h"
 
 int str_len(const char *str) {
@@ -25,4 +26,21 @@ int str_count_char(const char *str, char c) {
   }
 
   return counter;
+}
+
+char *str_concat(const char *str1, const char *str2) {
+  int size1 = str_len(str1);
+  int size2 = str_len(str2);
+
+  char *str_result = malloc((size1 + size2) * sizeof(char));
+
+  for (int i = 0; i < size1; i++) {
+    str_result[i] = str1[i];
+  }
+
+  for (int i = 0; i < size2; i++) {
+    str_result[size1 + i] = str2[i];
+  }
+
+  return str_result;
 }

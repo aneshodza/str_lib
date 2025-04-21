@@ -15,6 +15,12 @@ void test_str_count_char(void) {
   CU_ASSERT_EQUAL(str_count_char("", ' '), 0);
 }
 
+void test_str_concat(void) {
+  CU_ASSERT_STRING_EQUAL(str_concat("hello,", " world!"), "hello, world!");
+  CU_ASSERT_STRING_EQUAL(str_concat("", ""), "");
+  CU_ASSERT_STRING_EQUAL(str_concat(" ", "_"), " _");
+}
+
 int main() {
   // Sets up everything
   CU_initialize_registry();
@@ -25,6 +31,7 @@ int main() {
   // Register the tests
   CU_add_test(suite, "str_len tests", test_str_len);
   CU_add_test(suite, "str_count_char tests", test_str_count_char);
+  CU_add_test(suite, "str_concat tests", test_str_concat);
 
   // Run the registered tests
   CU_basic_run_tests();

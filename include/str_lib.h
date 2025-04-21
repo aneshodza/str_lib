@@ -4,5 +4,6 @@
 
 int str_len(const char *str);
 int str_count_char(const char *str, char c);
+char *str_concat(const char *str1, const char *str2);
 
 #endif
